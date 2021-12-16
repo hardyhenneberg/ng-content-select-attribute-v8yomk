@@ -1,4 +1,4 @@
-@use '@angular/material' as mat;
+//@use '@angular/material' as mat;
 
 p {
   font-family: 'Lato ';
@@ -6,6 +6,7 @@ p {
 }
 
 mat-card {
-  background-color: orange;
- // @include mat.elevation(4);
+ // background-color: orange;
+  // @include mat.elevation(4);
+ 
 }
