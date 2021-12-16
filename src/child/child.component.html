@@ -4,7 +4,9 @@
 <mat-card fxLayout="column" fxFlex="0 0 100%" style=" overflow-y: hidden">
   <!--100% betyder nu at den fylder hele højden fordi den ligger i en kolonne-->
   <!-- fxLayoutAlign="start stretch" er jo default, og betyder nu at den starter i toppen og indholdet strækkes i hele bredden-->
-  <mat-card-title fxFlex="30px">Calendar</mat-card-title>
+  <mat-card-title fxFlex="30px">
+    <ng-content select="[title]"></ng-content>
+  </mat-card-title>
   <!--title ligger i en kolonne, så 30px betyder den er 30 pix høj-->
   <!-- fxLayoutAlign="start stretch" er jo default, og betyder nu at den starter i toppen og indholdet strækkes i hele bredden-->
   <mat-card-content
