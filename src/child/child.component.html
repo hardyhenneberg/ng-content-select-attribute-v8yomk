@@ -1,89 +1,34 @@
-<div id='calendarTotal' (window:resize)="onResize()" style='margin: 10px;  overflow-y: hidden' class='ramme' fxLayout="column"
-    fxLayoutAlign="start stretch" fxFlex='100%'>
-    <!--100% betyder dette element fylder hele bredden, fordi den omgivende implitte flexbox er en row-->
-    <!--  fxLayoutAlign="start stretch" ( som er default ) betyder den starter til venstre og den strækkes på tværs af 'row' altså at den fylder hele højden-->
-    <!-- column betyder at indholdet er en kollonne - også selvom der kun er eet element-->
-    <mat-card fxLayout='column' fxFlex='100%' style="margin: 0px; overflow-y: hidden">
-        <!--100% betyder nu at den fylder hele højden fordi den ligger i en kolonne-->
-        <!-- fxLayoutAlign="start stretch" er jo default, og betyder nu at den starter i toppen og indholdet strækkes i hele bredden-->
-        <mat-card-title fxFlex='30px'>Calendar</mat-card-title>
-        <!--title ligger i en kolonne, så 30px betyder den er 30 pix høj-->
-        <!-- fxLayoutAlign="start stretch" er jo default, og betyder nu at den starter i toppen og indholdet strækkes i hele bredden-->
-        <mat-card-content class="ramme mat-elevation-z10" fxLayout="column" fxFlex='1 0 0'
-            style=" margin-bottom: 10px; padding: 0em; overflow-y: scroll ">
-            <!-- fxFlex='1 0 0' betyder den starter med 0 pix høj ( det sidste 0) men den kan vokse ( det første 1), så den kan tage alt der er til overs-->
-            <!-- fxLayoutAlign="start stretch" er jo default, og betyder nu at den starter i toppen og indholdet strækkes i hele bredden-->
-            <!--Da indholdet typisk fylder mere end vinduet er der sat en scrollbar på-->
+<!--100% betyder dette element fylder hele bredden, fordi den omgivende implitte flexbox er en row-->
+<!--  fxLayoutAlign="start stretch" ( som er default ) betyder den starter til venstre og den strækkes på tværs af 'row' altså at den fylder hele højden-->
+<!-- column betyder at indholdet er en kollonne - også selvom der kun er eet element-->
+<mat-card fxLayout="column" fxFlex="1 1 0" style=" overflow-y: hidden">
+  <!--100% betyder nu at den fylder hele højden fordi den ligger i en kolonne-->
+  <!-- fxLayoutAlign="start stretch" er jo default, og betyder nu at den starter i toppen og indholdet strækkes i hele bredden-->
+  <mat-card-title fxFlex="30px">Calendar</mat-card-title>
+  <!--title ligger i en kolonne, så 30px betyder den er 30 pix høj-->
+  <!-- fxLayoutAlign="start stretch" er jo default, og betyder nu at den starter i toppen og indholdet strækkes i hele bredden-->
+  <mat-card-content
+    class="ramme mat-elevation-z10"
+    fxLayout="column"
+    fxFlex="0 1 100%"
+    style="overflow-y: hidden"
+  >
+    <!-- fxFlex='1 0 0' betyder den starter med 0 pix høj ( det sidste 0) men den kan vokse ( det første 1), så den kan tage alt der er til overs-->
+    <!-- fxLayoutAlign="start stretch" er jo default, og betyder nu at den starter i toppen og indholdet strækkes i hele bredden-->
+    <!--Da indholdet typisk fylder mere end vinduet er der sat en scrollbar på-->
 
-            <div fxLayout="column" fxFlex="0 0 40px" style="overflow-y: hidden">
-                <mat-table id="header" class="ramme mat-elevation-z10" fxLayout="column" fxFlex
-                    fxLayoutAlign='center stretch' style="overflow-y: hidden">
+    <div fxLayout="column" fxFlex="0 1 100%" style="overflow-y: scroll">
+      <!-- sørger for at body kan scrolles. Hvis man satte display:block på table kan man også scrolle, men så virker width ikke -->
 
-                    <!-- Tabel header  -->
-                    <mat-header-row *matHeaderRowDef="displayedColumns" fxFlex></mat-header-row>
+      <ng-content select="[content]"></ng-content>
+    </div>
+    <div class="mat-elevation-z10" style="min-height: 20px !important;"></div>
+  </mat-card-content>
 
-
-                    <ng-container matColumnDef="monday">
-                        <mat-header-cell fxLayoutAlign='center center' *matHeaderCellDef id="monday">Monday
-                        </mat-header-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="tuesday">
-                        <mat-header-cell fxLayoutAlign='center center' *matHeaderCellDef id='tuesday'>Tuesday
-                        </mat-header-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="wednesday">
-                        <mat-header-cell fxLayoutAlign='center center' *matHeaderCellDef id="wednesday">Wednesday
-                        </mat-header-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="thursday">
-                        <mat-header-cell fxLayoutAlign='center center' *matHeaderCellDef id="thursday">Thursday
-                        </mat-header-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="friday">
-                        <mat-header-cell fxLayoutAlign='center center' *matHeaderCellDef id="friday">Friday
-                        </mat-header-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="saturday">
-                        <mat-header-cell fxLayoutAlign='center center' *matHeaderCellDef id="saturday">Saturday
-                        </mat-header-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="sunday">
-                        <mat-header-cell fxLayoutAlign='center center' *matHeaderCellDef id="sunday">Sunday
-                        </mat-header-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="total">
-                        <mat-header-cell fxLayoutAlign='center center' *matHeaderCellDef id="total">Total
-                        </mat-header-cell>
-                    </ng-container>
-
-                </mat-table> <!-- tabel kun med header-->
-            </div>
-
-            <div fxFlex="1 1 auto" id="content" style=" width: 100%; ">
-                <!-- sørger for at body kan scrolles. Hvis man satte display:block på table kan man også scrolle, men så virker width ikke -->
-                <div id="marginDiv" style="height: 100%; margin-left: 0px; margin-right: 0px; ">
-                <ng-content select="[content]"></ng-content>
-                </div>
-            </div>
-            <div class="mat-elevation-z10" style='min-height: 20px !important;'>
-            </div>
-        </mat-card-content>
-        
-        <mat-card-actions fxLayout='row' fxFlex='50px' fxLayoutAlign="end center">
-
-           
-        <ng-content select="[actions]"></ng-content>
-        </mat-card-actions>
-    </mat-card>
-
-</div>
+  <mat-card-actions fxLayout="row" fxFlex="50px" fxLayoutAlign="end center">
+    <ng-content select="[actions]"></ng-content>
+  </mat-card-actions>
+</mat-card>
 
 <!--
 <mat-card
