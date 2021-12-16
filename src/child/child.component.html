@@ -1,38 +1,10 @@
-<div class="mat-elevation-z5">
-  <h3>Hardys Child Components</h3>
-  <button type="button" class="mat-elevation-z10">OK</button>
-</div>
-<!-- class="mat-elevation-z20" -->
-
 <mat-card
   class="mat-elevation-z5"
   fxLayout="column"
   fxFlex="1 1 45%"
   style="margin: 30px"
 >
-  <mat-card-title fxFlex="30px" style="color: blue">
-    mat-card-title
-  </mat-card-title>
-  <mat-card-content
-    fxLayout="column"
-    fxFlex="1 1 0"
-    style=" margin-bottom: 10px; padding: 2em; "
-  >
-    Content
-  </mat-card-content>
-
-  <mat-card-actions fxLayout="row" fxFlex="50px" fxLayoutAlign="end center">
-    Actions
-  </mat-card-actions>
-</mat-card>
-
-<mat-card
-  class="mat-elevation-z5"
-  fxLayout="column"
-  fxFlex="1 1 45%"
-  style="margin: 30px"
->
-  <mat-card-title fxFlex="30px" style="color: blue">
+  <mat-card-title fxFlex="10px" style="color: blue">
     <ng-content select="[title]"></ng-content>
   </mat-card-title>
   <mat-card-content
