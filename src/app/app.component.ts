@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular';
+  //displayedColumns = ['monday', 'tuesday']; den skal være i child
 }

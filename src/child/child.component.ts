@@ -8,5 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class ChildComponent implements OnInit {
   constructor() {}
 
+  displayedColumns = ['monday', 'tuesday'];
+
   ngOnInit() {}
+
+  onResize() {
+    console.log('----------resize-----------');
+  }
 }
