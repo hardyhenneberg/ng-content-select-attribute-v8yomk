@@ -7,9 +7,10 @@ import { HelloComponent } from './hello.component';
 import { ChildComponent } from '.././child/child.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, MatCardModule, MatToolbarModule],
+  imports: [BrowserModule, FormsModule, FlexLayoutModule, MatCardModule, MatToolbarModule],
   declarations: [AppComponent, HelloComponent, ChildComponent],
   bootstrap: [AppComponent],
 })
