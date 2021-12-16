@@ -1,6 +1,6 @@
 <div class="mat-elevation-z5">
-<h3>Hardys Child Components</h3>
-<button type="button" class="mat-elevation-z5">OK </button>
+  <h3>Hardys Child Components</h3>
+  <button type="button" class="mat-elevation-z0">OK</button>
 </div>
 <!-- class="mat-elevation-z20" -->
 
@@ -10,7 +10,6 @@
   fxFlex="1 1 45%"
   style="margin: 30px"
 >
-
   <mat-card-title fxFlex="30px" style="color: blue">
     mat-card-title
   </mat-card-title>
@@ -21,12 +20,10 @@
   >
     Content
   </mat-card-content>
- 
+
   <mat-card-actions fxLayout="row" fxFlex="50px" fxLayoutAlign="end center">
-  
     Actions
   </mat-card-actions>
-  
 </mat-card>
 
 <mat-card
@@ -35,7 +32,6 @@
   fxFlex="1 1 45%"
   style="margin: 30px"
 >
-
   <mat-card-title fxFlex="30px" style="color: blue">
     <ng-content select="[title]"></ng-content>
   </mat-card-title>
@@ -46,9 +42,8 @@
   >
     <ng-content select="[content]"></ng-content>
   </mat-card-content>
- 
-  <mat-card-actions fxLayout="row" fxFlex="50px" fxLayoutAlign="end center">
-  <ng-content select="[actions]"></ng-content>
-  </mat-card-actions>
 
+  <mat-card-actions fxLayout="row" fxFlex="50px" fxLayoutAlign="end center">
+    <ng-content select="[actions]"></ng-content>
+  </mat-card-actions>
 </mat-card>

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { ChildComponent } from '.././child/child.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar/toolbar-module';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, MatCardModule, MatToolbarModule],
